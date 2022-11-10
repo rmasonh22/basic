@@ -11,7 +11,7 @@
 <div id="shopping-list">
     <h1>{{header || 'Welcome'}}</h1>
     <ul>
-        <li v-for="item in items">{{item}}</li>
+        <li v-for="item in items" :key="item.id">{{item.label}}</li>
     </ul>
 </div>
 
@@ -25,7 +25,13 @@
         data() {
             return {
                  header: "Shopping List App",
-                 items: ["Milk", "Eggs", "Bread", "Cheese"]
+                 items: [
+                    {id:1, label:"Milk"}, 
+                    {id:2, label:"Eggs"},
+                    {id:3, label:"Bread"},
+                    {id:4, label:"Cheese"},
+                    
+                ]
             }
         }
     })
