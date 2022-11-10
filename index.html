@@ -10,7 +10,9 @@
 <!--add div -->
 <div id="shopping-list">
     <h1>{{header || 'Welcome'}}</h1>
-    <input v-model="header">
+    <ul>
+        <li v-for="item in items">{{item}}</li>
+    </ul>
 </div>
 
 
@@ -19,10 +21,11 @@
 
 <script>
     // assign const to reset in console like shoppingList.header="hello from console"
-    const shoppingList=Vue.createApp({
+    const shoppingListApp = Vue.createApp({
         data() {
             return {
-                 header: "Shopping List App"
+                 header: "Shopping List App",
+                 items: ["Milk", "Eggs", "Bread", "Cheese"]
             }
         }
     })
