@@ -11,8 +11,20 @@
 <div id="shopping-list">
     <h1>{{header || 'Welcome'}}</h1>
     <input type="text" v-model="newItem" placeholder="Add new item"><br>
-    <label><input type="radio" v-model='newItemPriority' value="low">Low</label>
-    <label><input type="radio" v-model='newItemPriority' value="high">High</label>
+    <!-- radio buttons -->
+    <!-- <label><input type="radio" v-model='newItemPriority' value="low">Low</label>
+    <label><input type="radio" v-model='newItemPriority' value="high">High</label> -->
+
+    <!-- Select Box -->
+
+    <label>
+        Priority
+        <select v-model="newItemPriority">
+            <option value="low">Low</option>
+            <option value="high">High</option>
+        </select>
+    </label>
+
     <br>
     {{newItem}} <br> <h2>Priority is </h2>{{newItemPriority}}
     
