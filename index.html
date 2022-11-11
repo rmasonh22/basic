@@ -10,6 +10,12 @@
 <!--add div -->
 <div id="shopping-list">
     <h1>{{header || 'Welcome'}}</h1>
+    <input type="text" v-model="newItem" placeholder="Add new item"><br>
+    <label><input type="radio" v-model='newItemPriority' value="low">Low</label>
+    <label><input type="radio" v-model='newItemPriority' value="high">High</label>
+    <br>
+    {{newItem}} <br> <h2>Priority is </h2>{{newItemPriority}}
+    
     <ul>
         <li v-for="item in items" :key="item.id">{{item.label}}</li>
     </ul>
@@ -25,6 +31,8 @@
         data() {
             return {
                  header: "Shopping List App",
+                 newItem: '',
+                 newItemPriority: 'low',
                  items: [
                     {id:1, label:"Milk"}, 
                     {id:2, label:"Eggs"},
